@@ -22,7 +22,6 @@ def allowed_file(filename):
 with app.app_context():
     db.create_all()  # Создание таблиц
 
-# ADMIN
 def is_local_request():
     """Проверяет, является ли запрос локальным (с localhost/127.0.0.1)."""
     try:
@@ -43,7 +42,6 @@ class MyAdminIndexView(AdminIndexView):
         return self.render('admin/index.html')
 
 admin = Admin(app, index_view=MyAdminIndexView(), name='Админ Панель(127.0.0.1)', template_mode='bootstrap3')
-# END ADMIN
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
