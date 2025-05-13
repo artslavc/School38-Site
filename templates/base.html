@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}МБОУ СОШ №38{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Верхняя шапка (От снега) -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>{% block header %}МБОУ СОШ 38{% endblock %}</h1>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="mx-auto" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">О школе</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('act') }}">Поступление</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('schedule') }}">Расписание</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('teachers') }}">Учителя</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основное содержание -->
+    <main class="container mt-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p>МБОУ СОШ 38 г. Владивосток</p>
+        <p>Телефон: +7000000000</p>
+    </footer>
+
+    <style>
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            margin-top: 41rem;
+            padding: 1.5rem;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block header %}Учителя - МБОУ СОШ №38{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персонал</title>
+</head>
+<body>
+    <h2>Учителя</h2>
+    <p>Здесь представлен наш персонал.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Учитель</th>
+                <th>Предмет</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.Teacher }}</td>
+                <td>{{ teacher.Lesson }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% endblock %}

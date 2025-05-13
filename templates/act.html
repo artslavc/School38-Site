@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block header %}Поступление - МБОУ СОШ №38{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подать Заявку</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .college-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .form-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .college-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+    </style>
+</head>
+<body style="background-image: url(static/images/school9maya.jpg); background-repeat: no-repeat;background-size: cover;
+    background-position: center;
+    height: 141vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: cover;">
+    <div class="container">
+        {% if success %}
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Ваша заявка успешно отправлена!</h5>
+                    <p class="card-text">Мы свяжемся с вами в ближайшее время.</p>
+                </div>
+            </div>
+        {% else %}
+        <br><br><br><br>
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h2 class="card-title text-center">Подать Заявку на Поступление</h2>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <br>
+                        <div class="card form-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Заполните форму</h5>
+                                <form method="POST" action="/submit">
+                                    <div class="form-group">
+                                        <label for="name">Имя, Фамилия</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Имя Фамилия" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="example@example.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Номер Телефона</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">ПОСТУПИТЬ</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card college-card">
+                            <img src="/static/images/school38_map.png" class="card-img-top" alt="Фотография Школы">
+                            <div class="card-body">
+                                <p class="card-text text-center">Приемная комиссия: 790000000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Расписание{% endblock %}
+
+{% block header %}Расписание - МБОУ СОШ №38{% endblock %}
+
+{% block content %}
+<h2>Расписание занятий</h2>
+<p>Здесь представлено расписание уроков.</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Время</th>
+            <th>Предмет</th>
+            <th>Учитель</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for schedule in schedules %}
+        <tr>
+            <td>{{ schedule.Time }}</td>
+            <td>{{ schedule.Lesson }}</td>
+            <td>{{ schedule.Teacher }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

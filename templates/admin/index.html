@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Добро пожаловать в админ-панель!</h1>
+        <p>Здесь вы можете управлять вашим контентом.</p>
+        
+        <div class="mt-4">
+            <a href="{{ url_for('admin_add_news') }}" class="btn btn-primary">Добавить Новость</a>
+            <a href="{{ url_for('admin_schedule') }}" class="btn btn-secondary">Изменить Расписание</a>
+            <br><br>
+            <a href="{{ url_for('admin_teachers') }}" class="btn btn-primary">Учителя</a> 
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Назад</a> 
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

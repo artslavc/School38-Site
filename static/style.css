@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+footer {
+    background-color: #343a40; /* Цвет фона подвала */
+    color: white; /* Цвет текста подвала */
+    text-align: center; /* Центрирование текста */
+    padding: 1rem; /* Отступы */
+}
